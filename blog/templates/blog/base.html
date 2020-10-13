@@ -18,7 +18,7 @@
     </head>
     <body class="loader">
         {% comment %} navbar {% endcomment %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light techfont custom-navbar">
+        <nav class="navbar navbar-expand-lg bg-light techfont">
             <div class="container">
                 <ul class="nav navbar-nav">
                     <li>
@@ -27,17 +27,17 @@
                         </a>
                     </li>
                     <li>
-                        <a class="navbar-brand bigbrand" href="{% url 'about' %}">
+                        <a class="nav-item nav-link" href="{% url 'about' %}">
                             About
                         </a>
                     </li>
                     <li>
-                        <a class="navbar-brand bigbrand" href="https://www.github.com">
+                        <a class="nav-item nav-link" href="https://www.github.com">
                             Github
                         </a>
                     </li>
                     <li>
-                        <a class="navbar-brand bigbrand" href="https://www.linkedin.com">
+                        <a class="nav-item nav-link" href="https://www.linkedin.com">
                             LinkedIn
                         </a>
                     </li>
@@ -46,28 +46,28 @@
                 <ul class="nav navbar-nav navbar right">
                     {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'post_new' %}">
+                            <a class="nav-item nav-link" href="{% url 'post_new' %}">
                                 New Post
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'post_draft_list' %}">
+                            <a class="nav-item nav-link" href="{% url 'post_draft_list' %}">
                                 Draft Page
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'logout' %}">
+                            <a class="nav-item nav-link" href="{% url 'logout' %}">
                                 Log Out
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a >
                                 Welcome: {{user.username}}
                             </a>
                         </li>
                     {% else %}
                         <li>
-                            <a class="nav navbar-right" href="{% url 'login' %}">
+                            <a class="nav-item nav-link" href="{% url 'login' %}">
                                 <span class="glyphicon glyphicon-user" aria-hidden="true">Login</span>
                             </a>
                         </li>

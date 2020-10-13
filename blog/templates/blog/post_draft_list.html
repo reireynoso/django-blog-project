@@ -1,7 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-
-    {% for post in posts %}
+    {% for post in draft_post %}
         <div class="post">
             <p>created: {{post.created_date|date:'d-m-Y'}}</p>
             <h1>
@@ -9,7 +8,8 @@
                     {{post.title}}
                 </a>
             </h1>
-            <p>{{post.text|truncatechars:200}}</p>
+            {% comment %} since medium stores the string as html. Safe converts string to html {% endcomment %}
+            {{post.text|safe|truncatechars:200}}
         </div>
     {% endfor %}
 {% endblock %}
